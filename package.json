@@ -1,0 +1,25 @@
+{
+  "name": "autoemployeehealthcheck",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dist/index",
+    "build": "tsc",
+    "tsc": "tsc",
+    "dev": "tsc -w & nodemon ./dist/index",
+    "prettier": "prettier --write \"src/**/*.ts\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^1.8.2",
+    "dotenv": "^8.2.0",
+    "log4js": "^6.3.0",
+    "puppeteer": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/cron": "^1.7.2",
+    "@types/puppeteer": "^3.0.2"
+  }
+}
