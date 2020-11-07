@@ -16,10 +16,12 @@
     "cron": "^1.8.2",
     "dotenv": "^8.2.0",
     "log4js": "^6.3.0",
+    "node-telegram-bot-api": "^0.50.0",
     "puppeteer": "^5.4.1"
   },
   "devDependencies": {
     "@types/cron": "^1.7.2",
+    "@types/node-telegram-bot-api": "^0.50.4",
     "@types/puppeteer": "^3.0.2"
   }
 }

@@ -1,6 +1,8 @@
 import * as log4js from 'log4js';
 import puppeteer from 'puppeteer';
 
+import { sendBotMessage } from './bot';
+
 const logger = log4js.getLogger('crawler');
 
 function _getRandom(): number {
@@ -33,14 +35,16 @@ async function crawlWeb(url: string, workerNumber: string) {
   logger.info('Worker Number: ', workerNumber);
   logger.info('Temperature : ', temperature);
 
-  if (page.url() === 'https://zh.surveymonkey.com/r/HCCompleted') {
+  let isSucceed = false;
+  if (page.url().includes('HCCompleted')) {
     logger.info('Auto employee health check completed!');
+    isSucceed = true;
   } else {
     logger.info('Auto employee health check failed!');
   }
 
-  await page.screenshot({ path: 'result.png' });
-
+  sendBotMessage(workerNumber, temperature, isSucceed);
+  
   await browser.close();
 }
 
