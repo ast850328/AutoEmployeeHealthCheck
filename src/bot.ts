@@ -8,7 +8,6 @@ const channelId: string = process.env.CHANNEL_ID ? process.env.CHANNEL_ID : '';
 const bot = new TelegramBot(botToken, {polling: true});
 
 function sendBotMessage(workerNumber: string, temperature: string, isSucceed: boolean) {
-    console.log(channelId);
     const message: string = `${workerNumber} ${temperature} ${isSucceed ? '✅' : '❌'}`;
     bot.sendMessage(channelId, message, { parse_mode: 'Markdown' });
 }
