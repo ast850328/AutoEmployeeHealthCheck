@@ -10,7 +10,7 @@ function _getRandom(): number {
 }
 
 async function crawlWeb(url: string, workerNumber: string) {
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({ignoreDefaultArgs: ['--disable-extensions']});
   const page = await browser.newPage();
   await page.goto(url);
 
