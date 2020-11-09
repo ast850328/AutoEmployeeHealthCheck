@@ -13,11 +13,13 @@ const logger = log4js.getLogger('crawler');
 dotenv.config();
 const url: string = process.env.URL ? process.env.URL : '';
 const cronTime: string = process.env.CRON_TIME ? process.env.CRON_TIME : '* * * * * *';
-const workerNumber: string = process.env.WORKER_NUMBER ? process.env.WORKER_NUMBER : '';
+const workerNumbers: Array<string> = process.env.WORKER_NUMBER ? process.env.WORKER_NUMBER?.split(',') : [''];
 
 const job = new CronJob(cronTime, () => {
   logger.info('start job');
-  crawlWeb(url, workerNumber);
+  workerNumbers.forEach((workerNumber) => {
+    crawlWeb(url, workerNumber);
+  });
 }, null, true, 'Asia/Taipei');
 
 job.start();
