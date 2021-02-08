@@ -10,6 +10,8 @@ function _getRandom(): number {
 }
 
 async function crawlWeb(url: string, workerNumber: string) {
+  logger.info(`Start to auto health check ${workerNumber}`);
+
   const browser = await puppeteer.launch({args: ['--no-sandbox', '--disable-setuid-sandbox']});
   const page = await browser.newPage();
   await page.goto(url);
@@ -38,9 +40,11 @@ async function crawlWeb(url: string, workerNumber: string) {
   let isSucceed = false;
   if (page.url().includes('HCCompleted')) {
     logger.info('Auto employee health check completed!');
+    logger.info(`Completed worker number: ${workerNumber}`);
     isSucceed = true;
   } else {
     logger.info('Auto employee health check failed!');
+    logger.info(`Failed worker number: ${workerNumber}`);
   }
 
   sendBotMessage(workerNumber, temperature, isSucceed);

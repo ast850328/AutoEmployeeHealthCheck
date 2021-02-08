@@ -23,3 +23,5 @@ const job = new CronJob(cronTime, () => {
 }, null, true, 'Asia/Taipei');
 
 job.start();
+logger.info('AutoEmployeeHealthCheck is on.');
+logger.info(`The worker numbers are : ${workerNumbers}`);
