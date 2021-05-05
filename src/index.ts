@@ -18,7 +18,11 @@ const workerNumbers: Array<string> = process.env.WORKER_NUMBERS ? process.env.WO
 const job = new CronJob(cronTime, () => {
   logger.info('start job');
   workerNumbers.forEach((workerNumber) => {
-    crawlWeb(url, workerNumber);
+    crawlWeb(url, workerNumber)
+    .catch(error => {
+      logger.error(error);
+      logger.error(`Failed worker number: ${workerNumber}`);
+    });;
   });
 }, null, true, 'Asia/Taipei');
 
