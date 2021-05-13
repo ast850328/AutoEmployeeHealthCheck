@@ -17,33 +17,35 @@ async function crawlWeb(url: string, workerNumber: string) {
   await page.goto(url);
 
   // agree button
-  await page.click('input[id="647719974_4255613818"]');
+  await page.click('input[id="486014833_3209788694"]');
   // worker number
-  await page.type('input[id="647719971"]', workerNumber);
+  await page.type('input[id="486014830"]', workerNumber);
+  // temperature method
+  await page.click('input[id="486014835_3209788699"]');
   // temperature
-  await page.click('input[id="647719976_4255613822"]');
+  const temperature = _getRandom().toString();
+  await page.type('input[id="486014831"]', temperature);
   // close contacted people
-  await page.click('input[id="647719981_4255613851"]');
+  await page.click('input[id="486015076_3209796414"]');
   // declaration
-  await page.click('input[id="647719973_4255613808"]');
+  await page.click('input[id="486014832_3209788684"]');
 
   await page.click('button[type=submit]');
 
   await page.waitForNavigation();
 
   logger.info('Worker Number: ', workerNumber);
+  logger.info('Temperature: ', temperature);
 
   let isSucceed = false;
   if (page.url().includes('HCCompleted')) {
-    logger.info('Auto employee health check completed!');
     logger.info(`Completed worker number: ${workerNumber}`);
     isSucceed = true;
   } else {
-    logger.info('Auto employee health check failed!');
     logger.info(`Failed worker number: ${workerNumber}`);
   }
 
-  sendBotMessage(workerNumber, isSucceed);
+  sendBotMessage(workerNumber, temperature, isSucceed);
 
   await browser.close();
 }
