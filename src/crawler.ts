@@ -17,18 +17,20 @@ async function crawlWeb(url: string, workerNumber: string) {
   await page.goto(url);
 
   // agree button
-  await page.click('input[id="486014833_3209788694"]');
+  await page.click('input[id="655521227_4306656654"]');
   // worker number
-  await page.type('input[id="486014830"]', workerNumber);
+  await page.type('input[id="655521224"]', workerNumber);
   // temperature method
-  await page.click('input[id="486014835_3209788699"]');
+  await page.click('input[id="655521229_4306656659"]');
   // temperature
   const temperature = _getRandom().toString();
-  await page.type('input[id="486014831"]', temperature);
+  await page.type('input[id="655521225"]', temperature);
   // close contacted people
-  await page.click('input[id="486015076_3209796414"]');
+  await page.click('input[id="655521234_4306656687"]');
+  // broadcast messaging
+  await page.click('input[id="655521350_4306658113"]');
   // declaration
-  await page.click('input[id="486014832_3209788684"]');
+  await page.click('input[id="655521226_4306656644"]');
 
   await page.click('button[type=submit]');
 
