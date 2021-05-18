@@ -17,20 +17,22 @@ async function crawlWeb(url: string, workerNumber: string) {
   await page.goto(url);
 
   // agree button
-  await page.click('input[id="655521227_4306656654"]');
+  await page.click('input[id="656236653_4311183173"]');
   // worker number
-  await page.type('input[id="655521224"]', workerNumber);
+  await page.type('input[id="656236650"]', workerNumber);
   // temperature method
-  await page.click('input[id="655521229_4306656659"]');
+  await page.click('input[id="656236655_4311183178"]');
   // temperature
   const temperature = _getRandom().toString();
-  await page.type('input[id="655521225"]', temperature);
+  await page.type('input[id="656236651"]', temperature);
   // close contacted people
-  await page.click('input[id="655521234_4306656687"]');
+  await page.click('input[id="656236660_4311183206"]');
   // broadcast messaging
-  await page.click('input[id="655521350_4306658113"]');
+  await page.click('input[id="656236661_4311183210"]');
+  // stay in Wanhua
+  await page.click('input[id="656236965_4311185198"]');
   // declaration
-  await page.click('input[id="655521226_4306656644"]');
+  await page.click('input[id="656236652_4311183163"]');
 
   await page.click('button[type=submit]');
 
