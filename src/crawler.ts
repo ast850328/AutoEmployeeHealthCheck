@@ -17,22 +17,22 @@ async function crawlWeb(url: string, workerNumber: string) {
   await page.goto(url);
 
   // agree button
-  await page.click('input[id="656236653_4311183173"]');
+  await page.click('input[id="658750779_4327847677"]');
   // worker number
-  await page.type('input[id="656236650"]', workerNumber);
+  await page.type('input[id="658750776"]', workerNumber);
   // temperature method
-  await page.click('input[id="656236655_4311183178"]');
+  await page.click('input[id="658750781_4327847680"]');
   // temperature
   const temperature = _getRandom().toString();
-  await page.type('input[id="656236651"]', temperature);
+  await page.type('input[id="658750777"]', temperature);
   // close contacted people
-  await page.click('input[id="656236660_4311183206"]');
+  await page.click('input[id="658750786_4327847704"]');
   // broadcast messaging
-  await page.click('input[id="656236661_4311183210"]');
-  // stay in Wanhua
-  await page.click('input[id="656236965_4311185198"]');
+  await page.click('input[id="658750787_4327847706"]');
+  // accepted the PCR nucleic acid test or got the positive of COVID-19 rapid test
+  await page.click('input[id="658750788_4327847708"]');
   // declaration
-  await page.click('input[id="656236652_4311183163"]');
+  await page.click('input[id="658750778_4327847669"]');
 
   await page.click('button[type=submit]');
 
