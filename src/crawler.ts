@@ -17,22 +17,22 @@ async function crawlWeb(url: string, workerNumber: string) {
   await page.goto(url);
 
   // agree button
-  await page.click('input[id="658750779_4327847677"]');
+  await page.click('input[id="659398437_4331991557"]');
   // worker number
-  await page.type('input[id="658750776"]', workerNumber);
+  await page.type('input[id="659398434"]', workerNumber);
   // temperature method
-  await page.click('input[id="658750781_4327847680"]');
+  await page.click('input[id="659398439_4331991560"]');
   // temperature
   const temperature = _getRandom().toString();
-  await page.type('input[id="658750777"]', temperature);
+  await page.type('input[id="659398435"]', temperature);
   // close contacted people
-  await page.click('input[id="658750786_4327847704"]');
+  await page.click('input[id="659398444_4331991584"]');
   // broadcast messaging
-  await page.click('input[id="658750787_4327847706"]');
+  await page.click('input[id="659398445_4331991586"]');
   // accepted the PCR nucleic acid test or got the positive of COVID-19 rapid test
-  await page.click('input[id="658750788_4327847708"]');
+  await page.click('input[id="659398446_4331991588"]');
   // declaration
-  await page.click('input[id="658750778_4327847669"]');
+  await page.click('input[id="659398436_4331991549"]');
 
   await page.click('button[type=submit]');
 
