@@ -118,3 +118,4 @@ dist
 result.png
 crawler.log
 .vscode/
+.idea/

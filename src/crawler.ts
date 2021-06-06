@@ -17,24 +17,26 @@ async function crawlWeb(url: string, workerNumber: string) {
   await page.goto(url);
 
   // agree button
-  await page.click('input[id="660768081_4340945613"]');
+  await page.click('input[id="664916255_4368333336"]');
   // worker number
-  await page.type('input[id="660768078"]', workerNumber);
+  await page.type('input[id="664916252"]', workerNumber);
   // temperature method
-  await page.click('input[id="660768083_4340945616"]');
+  await page.click('input[id="664916257_4368333339"]');
   // temperature
   const temperature = _getRandom().toString();
-  await page.type('input[id="660768079"]', temperature);
+  await page.type('input[id="664916253"]', temperature);
   // close contacted people
-  await page.click('input[id="660768088_4340945640"]');
-  // broadcast messaging
-  await page.click('input[id="660768089_4340945642"]');
+  await page.click('input[id="664916262_4368333363"]');
+  // you or your cohabitants(including non-daily living together) sought medical care
+  await page.click('input[id="664916263_4368333364"]');
   // accepted the PCR nucleic acid test or got the positive of COVID-19 rapid test
-  await page.click('input[id="660768090_4340945644"]');
+  await page.click('input[id="664916264_4368333367"]');
   // stayed in any indoor place for more than 2 hours in Taipei city or New Taipei city in the past 14 days?
-  await page.click('input[id="660769069_4340992401"]');
+  await page.click('input[id="664916265_4368333384"]');
+  // stayed in any indoor place for more than 2 hours in Miaoli city in the past 14 days?
+  await page.click('input[id="664916315_4368333807"]');
   // declaration
-  await page.click('input[id="660768080_4340945605"]');
+  await page.click('input[id="664916254_4368333328"]');
 
   await page.click('button[type=submit]');
 
