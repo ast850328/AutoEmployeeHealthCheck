@@ -16,29 +16,36 @@ async function crawlWeb(url: string, workerNumber: string) {
   const page = await browser.newPage();
   await page.goto(url);
 
+  // first page
   // agree button
-  await page.click('input[id="664916255_4368333336"]');
+  await page.click('input[id="670913045_4407790167"]');
   // worker number
-  await page.type('input[id="664916252"]', workerNumber);
+  await page.type('input[id="670913042"]', workerNumber);
   // temperature method
-  await page.click('input[id="664916257_4368333339"]');
+  await page.click('input[id="670913047_4407790170"]');
   // temperature
   const temperature = _getRandom().toString();
-  await page.type('input[id="664916253"]', temperature);
-  // close contacted people
-  await page.click('input[id="664916262_4368333363"]');
-  // you or your cohabitants(including non-daily living together) sought medical care
-  await page.click('input[id="664916263_4368333364"]');
-  // accepted the PCR nucleic acid test or got the positive of COVID-19 rapid test
-  await page.click('input[id="664916264_4368333367"]');
-  // stayed in any indoor place for more than 2 hours in Taipei city or New Taipei city in the past 14 days?
-  await page.click('input[id="664916265_4368333384"]');
-  // stayed in any indoor place for more than 2 hours in Miaoli city in the past 14 days?
-  await page.click('input[id="664916315_4368333807"]');
-  // declaration
-  await page.click('input[id="664916254_4368333328"]');
-
+  await page.type('input[id="670913043"]', temperature);
+  // high risk person
+  await page.click('input[id="670913052_4407790194"]');
+  // symptoms of COVID-19 in the past 7 days
+  await page.click('input[id="670913053_4407790195"]');
+  // high risk hot spot
+  await page.click('input[id="670913055_4407790215"]');
+  // next page
   await page.click('button[type=submit]');
+
+  await page.waitForNavigation();
+
+  // second page
+  // accepted the PCR nucleic acid test
+  await page.click('input[id="670913054_4407790198"]');
+  // last rapid test result in 7 days
+  await page.click('input[id="670917501_4407848014"]');
+  // declaration
+  await page.click('input[id="670913044_4407790159"]');
+  // next page
+  await page.click('button.btn.small.next-button.survey-page-button.user-generated.notranslate');
 
   await page.waitForNavigation();
 
