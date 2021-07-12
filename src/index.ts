@@ -3,6 +3,7 @@ import * as log4js from "log4js";
 import * as dotenv from "dotenv";
 
 import { crawlWeb } from "./crawler";
+import { sendBotMessage } from "./bot";
 
 log4js.configure({
   appenders: { crawler: { type: "file", filename: "crawler.log" } },
@@ -24,9 +25,13 @@ const job = new CronJob(
   () => {
     logger.info("start job");
     workerNumbers.forEach((workerNumber) => {
-      crawlWeb(url, workerNumber).catch((error) => {
+      crawlWeb(url, workerNumber).then((value: void): void => {
+        logger.info(`Completed worker number: ${workerNumber}`);
+        sendBotMessage(workerNumber, true);
+      }).catch((error) => {
         logger.error(error);
         logger.error(`Failed worker number: ${workerNumber}`);
+        sendBotMessage(workerNumber, false);
       });
     });
   },
