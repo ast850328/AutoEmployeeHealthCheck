@@ -9,12 +9,10 @@ const bot = new TelegramBot(botToken, { polling: true });
 
 function sendBotMessage(
   workerNumber: string,
-  temperature: string,
   isSucceed: boolean
 ) {
-  const message: string = `${workerNumber} ${temperature} ${
-    isSucceed ? "✅" : "❌"
-  }`;
+  const message: string = `${workerNumber} ${isSucceed ? "✅" : "❌"
+    }`;
   bot.sendMessage(channelId, message, { parse_mode: "Markdown" });
 }
 
