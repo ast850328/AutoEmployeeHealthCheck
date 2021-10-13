@@ -17,31 +17,23 @@ async function crawlWeb(url: string, workerNumber: string) {
   await page.goto(url);
 
   // agree button
-  await page.click('input[id="683674386_4495696088"]');
+  await page.click('input[id="715032623_4702730653"]');
   // worker number
-  await page.type('input[id="683674383"]', workerNumber);
+  await page.type('input[id="715032620"]', workerNumber);
   // temperature method
-  await page.click('input[id="683674388_4495696091"]');
+  await page.click('input[id="715032625_4702730656"]');
   // temperature
   const temperature = _getRandom().toString();
-  await page.type('input[id="683674384"]', temperature);
+  await page.type('input[id="715032621"]', temperature);
   //Symptoms
-  await page.click('input[id="683674400_4495696174"]');
-  // high risk person
-  await page.click('input[id="683674393_4495696115"]');
+  await page.click('input[id="715032636_4702730736"]');
+  // update the health declaration form
+  await page.click('input[id="715032630_4702730680"]');
   //  got vaccinated
-  await page.click('input[id="683711504_4495952679"]');
-  // symptoms of COVID-19 in the past 7 days
-  await page.click('input[id="683674394_4495717677"]');
-  // overlap with the confirmed person’s footprint
-  await page.click('input[id="683674398_4495718982"]');
-  // accepted the PCR nucleic acid test
-  await page.click('input[id="683674395_4495696119"]');
-  // last rapid test result in 7 days
-  await page.click('input[id="683674397_4495696166"]');
+  await page.click('input[id="715032637_4702730770"]');
   // declaration
-  await page.click('input[id="683674385_4495696080"]');
-  // next page
+  await page.click('input[id="715032622_4702730645"]');
+  // submit
   await page.click("button[type=submit]");
 
   await page.waitForNavigation();
