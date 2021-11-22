@@ -30,7 +30,7 @@ async function crawlWeb(url: string, workerNumber: string) {
   // update the health declaration form
   await page.click('input[id="715032630_4702730680"]');
   //  got vaccinated
-  await page.click('input[id="715032637_4702730770"]');
+  await page.click('input[id="715032637_4702730769"]');
   // declaration
   await page.click('input[id="715032622_4702730645"]');
   // submit
