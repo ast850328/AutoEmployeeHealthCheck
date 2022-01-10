@@ -17,22 +17,24 @@ async function crawlWeb(url: string, workerNumber: string) {
   await page.goto(url);
 
   // agree button
-  await page.click('input[id="715032623_4702730653"]');
+  await page.click('input[id="748706227_4926034976"]');
   // worker number
-  await page.type('input[id="715032620"]', workerNumber);
+  await page.type('input[id="748706224"]', workerNumber);
   // temperature method
-  await page.click('input[id="715032625_4702730656"]');
+  await page.click('input[id="748706229_4926034979"]');
   // temperature
   const temperature = _getRandom().toString();
-  await page.type('input[id="715032621"]', temperature);
+  await page.type('input[id="748706225"]', temperature);
   //Symptoms
-  await page.click('input[id="715032636_4702730736"]');
+  await page.click('input[id="748706235_4926035018"]');
   // update the health declaration form
-  await page.click('input[id="715032630_4702730680"]');
+  await page.click('input[id="748706234_4926035003"]');
   //  got vaccinated
-  await page.click('input[id="715032637_4702730770"]');
+  await page.click('input[id="748706236_4926035043"]');
+  // air port
+  await page.click('input[id="748706328_4926038299"]');
   // declaration
-  await page.click('input[id="715032622_4702730645"]');
+  await page.click('input[id="748706226_4926034968"]');
   // submit
   await page.click("button[type=submit]");
 
