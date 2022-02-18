@@ -17,22 +17,22 @@ async function crawlWeb(url: string, workerNumber: string) {
   await page.goto(url);
 
   // agree button
-  await page.click('input[id="755896121_4987465614"]');
+  await page.click('input[id="763128017_5051449824"]');
   // worker number
-  await page.type('input[id="755896118"]', workerNumber);
+  await page.type('input[id="763128014"]', workerNumber);
   // temperature method
-  await page.click('input[id="755896123_4987465617"]');
+  await page.click('input[id="763128019_5051449827"]');
   // temperature
   const temperature = _getRandom().toString();
-  await page.type('input[id="755896119"]', temperature);
+  await page.type('input[id="763128015"]', temperature);
   //Symptoms
-  await page.click('input[id="755896129_4987465656"]');
+  await page.click('input[id="763128025_5051449866"]');
   // update the health declaration form
-  await page.click('input[id="755896128_4987494302"]');
+  await page.click('input[id="763128024_5051449895"]');
   //  got vaccinated
-  await page.click('input[id="755896130_4987465680"]');
+  await page.click('input[id="763128026_5051449890"]');
   // declaration
-  await page.click('input[id="755896120_4987465606"]');
+  await page.click('input[id="763128016_5051449816"]');
   // submit
   await page.click("button[type=submit]");
 
