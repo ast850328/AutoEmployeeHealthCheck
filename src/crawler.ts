@@ -27,6 +27,8 @@ async function crawlWeb(url: string, workerNumber: string) {
   await page.type('input[id="62391606"]', temperature);
   //Symptoms
   await page.click('input[id="62391616_516129418"]');
+  // COVID-19 rapid test
+  await page.click('input[id="62391993_525542511"]');
   // COVID-19 confirmed case
   await page.click('input[id="62391615_516129447"]');
   //  got vaccinated
