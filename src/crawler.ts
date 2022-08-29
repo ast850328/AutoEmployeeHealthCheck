@@ -17,31 +17,21 @@ async function crawlWeb(url: string, workerNumber: string) {
   await page.goto(url);
 
   // agree button
-  await page.click('input[id="66405067_542650090"]');
+  await page.click('input[id="87960815_688357155"]');
   // worker number
-  await page.type('input[id="66405064"]', workerNumber);
-  // temperature method
-  await page.click('input[id="66405069_542650093"]');
-  // temperature
-  const temperature = _getRandom().toString();
-  await page.type('input[id="66405065"]', temperature);
-  //Symptoms
-  await page.click('input[id="66405075_542650132"]');
-  // situations
-  await page.click('input[id="66405078_542650167"]');
-  // COVID-19 confirmed case
-  await page.click('input[id="66405074_542650161"]');
-  //  got vaccinated
-  await page.click('input[id="66405076_542650156"]');
+  await page.type('input[id="87960813"]', workerNumber);
+  // Symptoms
+  await page.click('input[id="87960820_688357202"]');
+  // rapid test
+  await page.click('input[id="87960821_688357189"]');
   // declaration
-  await page.click('input[id="66405066_542650082"]');
+  await page.click('input[id="87960814_688357154"]');
   // submit
   await page.click("button[type=submit]");
 
   await page.waitForNavigation();
 
   logger.info("Worker Number: ", workerNumber);
-  logger.info("Temperature: ", temperature);
 
   const completedUrl: string = page.url();
   await browser.close();
