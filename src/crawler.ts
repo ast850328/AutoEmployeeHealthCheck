@@ -17,15 +17,15 @@ async function crawlWeb(url: string, workerNumber: string) {
   await page.goto(url);
 
   // agree button
-  await page.click('input[id="87960815_688357155"]');
+  await page.click('input[id="97301341_751278109"]');
   // worker number
-  await page.type('input[id="87960813"]', workerNumber);
+  await page.type('input[id="97301339"]', workerNumber);
   // Symptoms
-  await page.click('input[id="87960820_688357202"]');
+  await page.click('input[id="97301346_751278156"]');
   // rapid test
-  await page.click('input[id="87960821_688357189"]');
+  await page.click('input[id="97301347_751278143"]');
   // declaration
-  await page.click('input[id="87960814_688357154"]');
+  await page.click('input[id="97301340_751278108"]');
   // submit
   await page.click("button[type=submit]");
 
